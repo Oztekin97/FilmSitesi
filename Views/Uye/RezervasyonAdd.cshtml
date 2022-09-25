@@ -1,0 +1,25 @@
+﻿@model FilmSitesi.Models.Rezervasyon
+<h2>SATIŞ SAYFASI</h2>
+@* eğer asp-action asp-controller ikilisini kullanmazsan sayfaya erişemezsin *@
+<form class="form-group" asp-action="RezervasyonAdd" asp-controller="Uye" method="post">
+    <br />
+    @Html.Label("MovieId")
+    @Html.DropDownListFor(x => x.MovieId, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control" })
+    <br />
+    @Html.Label("TC")
+    @Html.TextBoxFor(x => x.TC, new { @class = "form-control" })
+    <br />
+    @Html.Label("AdSoyad")
+    @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+    <br />
+    @Html.Label("EMail")
+    @Html.TextBoxFor(x => x.EMail, new { @class = "form-control" })
+    <br />
+    <br />
+    <button type="submit" class="btn btn-info">Verileri Kaydet</button>
+    <br />
+    <button type="button" class="btn btn-danger" data-dismiss="form-group">Vazgeç</button>
+</form>
+
+
+

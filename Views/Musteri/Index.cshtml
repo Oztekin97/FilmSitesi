@@ -1,0 +1,35 @@
+﻿@using FilmSitesi.Models
+@model List<Musteri>
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm("Index", "Musteri", FormMethod.Get))
+{
+    <p>
+        <b>Aranacak Müşteri Adı:</b> @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        <td>Müşteri TC</td>
+        <td>Müşteri Ad Soyad</td>
+        <td>Müşteri Email</td>
+        <td>Sil</td>
+        <td>Güncelle</td>
+    </tr>
+    <tbody>
+        @foreach (var musteri in Model)
+        {
+            <tr>
+                <td>@musteri.TC</td>
+                <td>@musteri.AdSoyad</td>
+                <td>@musteri.EMail</td>
+                <td><a href="/Musteri/SIL/@musteri.Id" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Musteri/GUNCELLE/@musteri.Id" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Musteri/EKLE/" class="btn btn-success">Müşteri Ekle</a>
+

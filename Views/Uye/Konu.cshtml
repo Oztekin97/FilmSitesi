@@ -1,0 +1,26 @@
+﻿@model FilmSitesi.Models.Konu
+
+
+<h1>Film Konusu</h1>
+
+<div>
+    <h4>Film</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FilmKonusu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FilmKonusu)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Film Listesine Geri Dön</a>
+</div>

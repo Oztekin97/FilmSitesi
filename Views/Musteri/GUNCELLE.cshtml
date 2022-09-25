@@ -1,0 +1,25 @@
+﻿@model FilmSitesi.Models.Musteri
+@{
+    ViewBag.Title = "GUNCELLE";
+}
+@using (Html.BeginForm("GUNCELLE", "Musteri", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.Id)
+    @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+    @Html.LabelFor(m => m.AdSoyad)
+    @Html.TextBoxFor(m => m.AdSoyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.AdSoyad, "", new { @style = "color:red" })
+    @Html.LabelFor(m => m.TC)
+    @Html.TextBoxFor(m => m.TC, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.TC, "", new { @style = "color:red" })
+    @Html.LabelFor(m => m.EMail)
+    @Html.TextBoxFor(m => m.EMail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.EMail, "", new { @style = "color:red" })
+</div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+
+

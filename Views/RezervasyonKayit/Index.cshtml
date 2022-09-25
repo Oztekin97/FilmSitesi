@@ -1,0 +1,33 @@
+﻿@using FilmSitesi.Models
+@model List<Rezervasyon>
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm("Index", "RezervasyonKayit", FormMethod.Get))
+{
+    <p>
+        <b>Aranacak Müşteri Adı:</b> @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        <td>Müşteri TC</td>
+        <td>Müşteri Ad Soyad</td>
+        <td>Film ID</td>
+        <td>Müşteri EMail</td>
+    </tr>
+    <tbody>
+        @foreach (var musteri in Model)
+        {
+        <tr>
+            <td>@musteri.TC</td>
+            <td>@musteri.AdSoyad</td>
+            <td>@musteri.MovieId</td>
+            <td>@musteri.EMail</td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/RezervasyonKayit/YeniSatis/" class="btn btn-success">Satış Yap</a>
+

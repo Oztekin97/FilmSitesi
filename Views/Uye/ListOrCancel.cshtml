@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Rezervasyon>
+<div class="border p-4 bg-white">
+    <div>
+        @if (Model.Count() > 0)
+        {
+            <table class="table table-striped border">
+                <tr class="table-secondary">
+                    <th>Rezervasyon Kodu</th>
+                    <th>Film Kodu</th>
+                    <th>İzleyici TC</th>
+                    <th>İzleyici Ad Soyad</th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.MovieId</td>
+                        <td>@item.TC</td>
+                        <td>@item.AdSoyad</td>
+                        <td><a class="btn btn-success" asp-action="Cancel" asp-route-id="@item.Id">İptal Et</a></td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
+    <div>
+        <a asp-action="Index">Film Listesine Geri Dön</a>
+    </div>
+</div>
+

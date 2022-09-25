@@ -1,0 +1,36 @@
+﻿@model FilmSitesi.Models.Rezervasyon
+<h2>SATIŞ SAYFASI</h2>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+   Bilet Satışı Yap
+</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Bilet Satış</h2>
+                <form method="post" action="/RezervasyonKayit/YeniSatis">
+                    <div class="modal-body">
+                        <label>Film ID:</label>
+                        @Html.TextBoxFor(m => m.MovieId, new { @class = "form-control" })
+                        <br />
+                        <label>TC:</label>
+                        @Html.TextBoxFor(m => m.TC, new { @class = "form-control" })
+                        <br />
+                        <label>Ad Soyad:</label>
+                        @Html.TextBoxFor(m => m.AdSoyad, new { @class = "form-control" })
+                        <br />
+                        <label>EMail:</label>
+                        @Html.TextBoxFor(m => m.EMail, new { @class = "form-control" })
+                        <br />
+                        <br />
+                        <button type="submit" class="btn btn-info">Verileri Kaydet</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Vazgeç</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

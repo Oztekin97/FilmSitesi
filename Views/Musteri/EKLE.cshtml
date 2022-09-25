@@ -1,0 +1,27 @@
+﻿@model FilmSitesi.Models.Musteri
+@{
+    ViewBag.Title = "EKLE";
+}
+<form class="form-group" method="post">
+    <div>
+        <label>Müşteri TC</label>
+        <input type="text" class="form-control" name="TC" />
+    </div>
+    <div>
+        <label>Müşteri Adı Soyadı</label>
+        <input type="text" class="form-control" name="AdSoyad" />
+    </div>
+    <div>
+        <label>Müşteri Email</label>
+        @Html.TextBoxFor(m => m.EMail, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btnEkle">Müşteri Ekle</button>
+    </div>
+    <script>
+        $('#btnEkle').click(function () {
+            alert('Müşteri Ekleme İşlemi Yapıldı')
+        });
+    </script>
+</form>
+@* EMail'i eklemede sorun yaşadım ama @Html ile çalışınca sorun çözüldü *@
